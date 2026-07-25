@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function cargarServicios(criterio = '') {
     const url = criterio 
-        ? `http://localhost:3000/api/servicios?q=${encodeURIComponent(criterio)}` 
-        : 'http://localhost:3000/api/servicios';
+        ? `/api/servicios?q=${encodeURIComponent(criterio)}` 
+        : '/api/servicios';
 
     fetch(url)
         .then(respuesta => respuesta.json())
