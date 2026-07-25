@@ -78,7 +78,7 @@ app.delete('/api/reservaciones/:id', ControllerReservacion.eliminarReservacion);
 app.get('/api/reservaciones/:id', ControllerReservacion.obtenerReservacion);
 app.put('/api/reservaciones/:id', ControllerReservacion.actualizarReservacion);
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Servidor MVC corriendo en http://localhost:${PORT}`);
 });
