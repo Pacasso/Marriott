@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 1. Cargar Usuarios, luego Habitaciones, luego los datos de la Reservación
-    fetch('http://localhost:3000/api/usuarios')
+    fetch('/api/usuarios')
         .then(res => res.json())
         .then(datos => {
             if (datos.success) {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     selectHuesped.innerHTML += `<option value="${h.id_usuario}">${h.nombre_completo}</option>`;
                 });
             }
-            return fetch('http://localhost:3000/api/habitaciones');
+            return fetch('/api/habitaciones');
         })
         .then(res => res.json())
         .then(datos => {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     selectHabitacion.innerHTML += `<option value="${hab.id_habitacion}">${hab.nombre_hotel} - ${hab.numero} (${hab.categoria})</option>`;
                 });
             }
-            return fetch(`http://localhost:3000/api/reservaciones/${idReservacion}`);
+            return fetch(`/api/reservaciones/${idReservacion}`);
         })
         .then(res => res.json())
         .then(datos => {
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const datos = { id_usuario, id_habitacion, fecha_entrada, fecha_salida, costo_total: costoNumerico, estado_reserva };
 
-            fetch(`http://localhost:3000/api/reservaciones/${idReservacion}`, {
+            fetch(`/api/reservaciones/${idReservacion}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(datos)
