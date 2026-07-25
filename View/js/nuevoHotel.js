@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. LLENAR EL COMBO BOX DE UBICACIONES
     // ==========================================
     function cargarDestinos() {
-        fetch('http://localhost:3000/api/destinos')
+        fetch('/api/destinos')
             .then(respuesta => respuesta.json())
             .then(datos => {
                 if (datos.success) {
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // NUEVO: LLENAR LOS CHECKBOXES DE SERVICIOS
     // ==========================================
     function cargarServiciosCatalogo() {
-        fetch('http://localhost:3000/api/servicios')
+        fetch('/api/servicios')
             .then(res => res.json())
             .then(datos => {
                 if (datos.success) {
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
             formData.append('imagen', imagenInput.files[0]);
 
             // Petición al backend
-            fetch('http://localhost:3000/api/hoteles', {
+            fetch('/api/hoteles', {
                 method: 'POST',
                 body: formData 
             })
