@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 estatus_activo: estatus
             };
 
-            fetch('http://localhost:3000/api/servicios', {
+            fetch('/api/servicios', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(datos)
