@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // 2. CARGAR SERVICIOS Y DESTINOS PRIMERO
     // ==========================================
-    fetch('http://localhost:3000/api/servicios')
+    fetch('/api/servicios')
         .then(res => res.json())
         .then(datosServicios => {
             if (datosServicios.success) {
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             // Una vez dibujados los servicios, cargamos los destinos
-            return fetch('http://localhost:3000/api/destinos');
+            return fetch('/api/destinos');
         })
         .then(res => res.json())
         .then(datosDestinos => {
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. CARGAR DATOS DEL HOTEL A EDITAR
     // ==========================================
     function cargarDatosHotel() {
-        fetch(`http://localhost:3000/api/hoteles/${idHotel}`)
+        fetch(`/api/hoteles/${idHotel}`)
             .then(res => res.json())
             .then(datos => {
                 if (datos.success) {
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. CARGAR DATOS DEL HOTEL A EDITAR
     // ==========================================
     function cargarDatosHotel() {
-        fetch(`http://localhost:3000/api/hoteles/${idHotel}`)
+        fetch(`/api/hoteles/${idHotel}`)
             .then(res => res.json())
             .then(datos => {
                 if (datos.success) {
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 formData.append('imagen', imagenInput.files[0]); 
             }
 
-            fetch(`http://localhost:3000/api/hoteles/${idHotel}`, {
+            fetch(`/api/hoteles/${idHotel}`, {
                 method: 'PUT',
                 body: formData
             })
