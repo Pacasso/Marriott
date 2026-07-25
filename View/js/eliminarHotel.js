@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // 2. CARGAR LOS DATOS PARA LA ADVERTENCIA
     // ==========================================
-    fetch(`http://localhost:3000/api/hoteles/${idHotel}`)
+    fetch(`/api/hoteles/${idHotel}`)
         .then(res => res.json())
         .then(datos => {
             if (datos.success) {
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnConfirmarEliminar.addEventListener('click', () => {
             
             // Enviamos la petición DELETE al backend
-            fetch(`http://localhost:3000/api/hoteles/${idHotel}`, {
+            fetch(`/api/hoteles/${idHotel}`, {
                 method: 'DELETE'
             })
             .then(respuesta => respuesta.json())
