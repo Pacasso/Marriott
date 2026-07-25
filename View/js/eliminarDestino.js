@@ -8,7 +8,7 @@ function eliminarDestino() {
         return;
     }
 
-    fetch(`http://localhost:3000/api/destinos/${idDestino}`, {
+    fetch(`/api/destinos/${idDestino}`, {
         method: 'DELETE'
     })
     .then(respuesta => respuesta.json())
