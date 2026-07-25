@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const datos = { id_hotel, numero, categoria, capacidad, tarifa, estatus };
 
-            fetch('http://localhost:3000/api/habitaciones', {
+            fetch('/api/habitaciones', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(datos)
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function cargarHoteles() {
-    fetch('http://localhost:3000/api/hoteles')
+    fetch('/api/hoteles')
         .then(res => res.json())
         .then(datos => {
             if (datos.success) {
