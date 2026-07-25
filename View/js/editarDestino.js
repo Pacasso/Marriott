@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // FASE 1: CARGAR ESTADOS PRIMERO
     // ==========================================
-    fetch('http://localhost:3000/api/estados')
+    fetch('/api/estados')
         .then(res => res.json())
         .then(datosEstados => {
             if (datosEstados.success) {
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // FASE 2: CARGAR DATOS DEL DESTINO A EDITAR
     // ==========================================
     function cargarDatosDestino() {
-        fetch(`http://localhost:3000/api/destinos/${idDestino}`)
+        fetch(`/api/destinos/${idDestino}`)
             .then(respuesta => respuesta.json())
             .then(datos => {
                 if (datos.success) {
@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 formData.append('imagen', imagenInput.files[0]); 
             }
 
-            fetch(`http://localhost:3000/api/destinos/${idDestino}`, {
+            fetch(`/api/destinos/${idDestino}`, {
                 method: 'PUT',
                 body: formData
             })
