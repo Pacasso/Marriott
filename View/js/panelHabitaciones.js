@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function cargarHabitaciones(criterio = '') {
     const url = criterio 
-        ? `http://localhost:3000/api/habitaciones?q=${encodeURIComponent(criterio)}` 
-        : 'http://localhost:3000/api/habitaciones';
+        ? `/api/habitaciones?q=${encodeURIComponent(criterio)}` 
+        : '/api/habitaciones';
 
     fetch(url)
         .then(respuesta => respuesta.json())
