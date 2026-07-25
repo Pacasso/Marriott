@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Hotel - Marriott</title>
+    <link rel="stylesheet" href="css/EliminarHotel.css">
+    <script src="js/auth.js"></script>
+</head>
+<body>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <div class="logo-panel">Marriott</div>
+        <ul>
+            <li><a href="Panel.html">🏠 Inicio</a></li>
+            <li><a href="PanelUsuarios.html">👥 Usuarios</a></li>
+            <li><a href="Destinos.html">🌎 Destinos</a></li>
+            <li><a href="PanelHoteles.html" class="activo">🏨 Hoteles</a></li>
+            <li><a href="PanelHabitaciones.html">🛏 Habitaciones</a></li>
+            <li><a href="PanelReservaciones.html">📅 Reservaciones</a></li>
+            <li><a href="PanelServicios.html">⭐ Servicios</a></li>
+            <li><a href="#" onclick="cerrarSesion(event)">🚪 Cerrar Sesión</a></li>
+        </ul>
+    </div>
+
+    <div class="main" id="main">
+
+        <div class="contenedor-formulario caja-alerta">
+            
+            <div class="header-alerta">
+                <h1>⚠️ Confirmar Eliminación</h1>
+                <p>Está a punto de dar de baja el siguiente hotel del sistema.</p>
+            </div>
+
+            <div class="info-hotel">
+                <div class="fila-doble">
+                    <div class="columna" style="flex: 0.3;">
+                        <label>ID</label>
+                        <input type="text" id="id_hotel" value="1" disabled class="input-deshabilitado">
+                    </div>
+                    <div class="columna">
+                        <label>Nombre del Hotel</label>
+                        <input type="text" id="nombre_hotel" value="Marriott Cancún Resort" disabled class="input-deshabilitado">
+                    </div>
+                </div>
+
+                <div class="fila-doble">
+                    <div class="columna">
+                        <label>Ubicación</label>
+                        <input type="text" id="ubicacion_hotel" value="Quintana Roo" disabled class="input-deshabilitado">
+                    </div>
+                    <div class="columna">
+                        <label>Estado Actual</label>
+                        <input type="text" id="estatus_hotel" value="Activo / Operando" disabled class="input-deshabilitado">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mensaje-validacion">
+                <strong>Nota:</strong> El sistema validará que este hotel no cuente con reservaciones activas o futuras antes de procesar la eliminación definitiva.
+            </div>
+
+            <div class="botones">
+                <button type="button" id="btn_confirmar_eliminar">Sí, Eliminar Hotel</button>
+                <a href="PanelHoteles.html" class="btn-cancelar">Cancelar</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("oculto");
+            document.getElementById("main").classList.toggle("expandido");
+        }
+    </script>
+    <script src="js/eliminarHotel.js"></script>
+</body>
+</html>

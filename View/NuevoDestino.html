@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Destino</title>
+    <link rel="stylesheet" href="css/nuevoDestino.css">
+    <script src="js/auth.js"></script>
+</head>
+<body>
+
+<div class="contenedor">
+
+    <h1>Registrar Destino</h1>
+
+    <form>
+
+        <label>Nombre del Destino</label>
+        <input type="text" id="nombre_destino" placeholder="Ej. Cancún">
+
+        <label>Entidad Federativa</label>
+        <select id="estado_destino">
+            <option value="">Seleccione un estado...</option>
+        </select>
+
+        <label>Descripción</label>
+        <input type="text" id="descripcion_destino" placeholder="Descripción breve del destino">
+
+        <label>Atracciones Turísticas</label>
+        <input type="text" id="atracciones_destino" placeholder="Principales atracciones del destino">
+
+        <label>Imagen del Destino</label>
+        <div class="preview">
+            <img id="preview_imagen" src="">
+        </div>
+        <input type="file" id="imagen_destino" accept="image/*">
+
+        <label>Estado</label>
+        <select id="estatus_destino">
+            <option value="1">Activo</option>
+            <option value="0">Inactivo</option>
+        </select>
+
+        <div class="botones">
+            <button type="button" id="btn_guardar">Guardar</button>
+
+            <a href="Destinos.html" class="btn-cancelar">
+                Cancelar
+            </a>
+        </div>
+
+    </form>
+
+</div>
+
+<script src="js/nuevoDestino.js"></script>
+</body>
+</html>

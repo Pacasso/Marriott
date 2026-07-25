@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Reservación - Marriott</title>
+    
+    <!-- Guardián de seguridad -->
+    <script src="js/auth.js"></script>
+    
+    <link rel="stylesheet" href="css/NuevaReservacion.css">
+</head>
+<body>
+
+    <button class="menu-btn" id="btn_menu">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <div class="logo">Marriott</div> 
+        <ul>
+            <li><a href="Panel.html">🏠 Inicio</a></li>
+            <li><a href="PanelUsuarios.html">👥 Usuarios</a></li>
+            <li><a href="Destinos.html">🌎 Destinos</a></li>
+            <li><a href="PanelHoteles.html">🏨 Hoteles</a></li>
+            <li><a href="PanelHabitaciones.html">🛏 Habitaciones</a></li>
+            <li><a href="PanelReservaciones.html" class="activo">📅 Reservaciones</a></li>
+            <li><a href="PanelServicios.html">⭐ Servicios</a></li>
+            <li><a href="#" onclick="cerrarSesion(event)">🚪 Cerrar Sesión</a></li>
+        </ul>
+    </div>
+
+    <div class="main" id="main">
+        
+        <div class="header">
+            <h1>Nueva Reservación</h1>
+            <p>Complete el siguiente formulario para registrar la estadía de un huésped.</p>
+        </div>
+
+        <div class="formulario-container">
+            <h2>Datos de la Reserva</h2>
+            
+            <form id="form_reservacion">
+                <!-- Fila 1: Huésped -->
+                <div class="grupo-form">
+                    <label for="id_huesped">Seleccione al Huésped (Cliente)</label>
+                    <select id="id_huesped" required>
+                        <option value="">-- Seleccione un cliente --</option>
+                        <!-- Opciones estáticas para visualizar el diseño -->
+                        <option value="1">Juan Pérez</option>
+                        <option value="2">María López</option>
+                    </select>
+                </div>
+
+                <!-- Fila 2: Hotel y Habitación -->
+                <div class="form-fila">
+                    <div class="grupo-form">
+                        <label for="id_hotel">Hotel</label>
+                        <select id="id_hotel" required>
+                            <option value="">-- Seleccione el Hotel --</option>
+                            <option value="1">Marriott Cancún Resort</option>
+                            <option value="2">Marriott Los Cabos</option>
+                        </select>
+                    </div>
+                    
+                    <div class="grupo-form">
+                        <label for="id_habitacion">Habitación</label>
+                        <select id="id_habitacion" required>
+                            <option value="">-- Seleccione primero el Hotel --</option>
+                            <option value="101">Suite Presidencial (101) - $5,000/noche</option>
+                            <option value="205">Habitación Doble (205) - $2,500/noche</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Fila 3: Fechas -->
+                <div class="form-fila">
+                    <div class="grupo-form">
+                        <label for="fecha_entrada">Fecha de Entrada (Check-in)</label>
+                        <!-- Usamos min="2026-07-24" como base de ejemplo -->
+                        <input type="date" id="fecha_entrada" min="2026-07-24" required>
+                    </div>
+                    
+                    <div class="grupo-form">
+                        <label for="fecha_salida">Fecha de Salida (Check-out)</label>
+                        <input type="date" id="fecha_salida" min="2026-07-25" required>
+                    </div>
+                </div>
+
+                <!-- Fila 4: Costo y Estado -->
+                <div class="form-fila">
+                    <div class="grupo-form">
+                        <label for="costo_total">Costo Total Estimado (MXN)</label>
+                        <input type="text" id="costo_total" value="$0.00" readonly class="input-readonly">
+                    </div>
+
+                    <div class="grupo-form">
+                        <label for="estado_reserva">Estado Inicial</label>
+                        <select id="estado_reserva" required>
+                            <option value="Pendiente">Pendiente</option>
+                            <option value="Confirmada">Confirmada</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="acciones-form">
+                    <a href="PanelReservaciones.html" class="btn-cancelar">Cancelar</a>
+                    <button type="submit" class="btn_nuevo" id="btn_guardar">Guardar Reservación</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById("btn_menu").addEventListener("click", function() {
+            document.getElementById("sidebar").classList.toggle("ocultar");
+            document.getElementById("main").classList.toggle("expandir");
+        });
+    </script>
+    <script src="js/nuevaReservacion.js"></script>
+</body>
+</html>

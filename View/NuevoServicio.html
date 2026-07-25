@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Servicio - Marriott</title>
+    <link rel="stylesheet" href="css/nuevoDestino.css">
+    <script src="js/auth.js"></script> 
+</head>
+<body>
+
+<div class="contenedor">
+
+    <h1>Registrar Nuevo Servicio</h1>
+
+    <form>
+
+        <label>Nombre del Servicio</label>
+        <input type="text" id="nombre_servicio" placeholder="Ej. Spa Premium">
+
+        <label>Descripción</label>
+        <input type="text" id="descripcion_servicio" placeholder="Descripción detallada del servicio">
+
+        <label>Costo (MXN)</label>
+        <input type="number" id="costo_servicio" placeholder="Ej. 850" min="0" step="0.01">
+
+        <label>Ícono Representativo</label>
+        <select id="icono_servicio">
+            <option value="🧖">🧖 Spa / Relajación</option>
+            <option value="🍽">🍽 Restaurante / Alimentos</option>
+            <option value="📶">📶 Internet / Tecnología</option>
+            <option value="🚗">🚗 Estacionamiento / Transporte</option>
+            <option value="💪">💪 Gimnasio / Deportes</option>
+            <option value="🧹">🧹 Limpieza / Mantenimiento</option>
+        </select>
+
+        <label>Estado</label>
+        <select id="estatus_servicio">
+            <option value="1">Disponible</option>
+            <option value="0">No Disponible</option>
+        </select>
+
+        <div class="botones">
+            <button type="button" id="btn_guardar">Guardar</button>
+
+            <a href="PanelServicios.html" class="btn-cancelar">
+                Cancelar
+            </a>
+        </div>
+
+    </form>
+
+</div>
+
+<script src="js/nuevoServicio.js"></script>
+</body>
+</html>

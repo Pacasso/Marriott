@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habitaciones - Marriott</title>
+    <link rel="stylesheet" href="css/PanelHabitaciones.css">
+    <script src="js/auth.js"></script>
+</head>
+<body>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <!-- Se corrigió a tu clase logo-panel -->
+        <div class="logo-panel">Marriott</div>
+        <ul>
+            <li><a href="Panel.html">🏠 Inicio</a></li>
+            <li><a href="PanelUsuarios.html">👥 Usuarios</a></li>
+            <li><a href="Destinos.html">🌎 Destinos</a></li>
+            <li><a href="PanelHoteles.html">🏨 Hoteles</a></li>
+            <li><a href="PanelHabitaciones.html" class="activo">🛏 Habitaciones</a></li>
+            <li><a href="PanelReservaciones.html">📅 Reservaciones</a></li>
+            <li><a href="PanelServicios.html">⭐ Servicios</a></li>
+            <li><a href="#" onclick="cerrarSesion(event)">🚪 Cerrar Sesión</a></li>
+        </ul>
+    </div>
+
+    <div class="main" id="main">
+
+        <!-- Se corrigió a tu clase header-panel -->
+        <div class="header-panel">
+            <h1>Habitaciones del Sistema</h1>
+            <p>Administra los espacios de hospedaje, categorías y tarifas de la cadena Marriott.</p>
+        </div>
+
+        <!-- Se corrigió a tu estructura de búsqueda -->
+        <div class="busqueda">
+            <h2>Buscar Habitación</h2>
+            <div class="form-busqueda">
+                <input type="text" id="input_busqueda" placeholder="Buscar por número, categoría u hotel...">
+                <button id="btn_buscar">Buscar</button>
+            </div>
+        </div>
+
+        <!-- Se corrigió a tu estructura de acciones -->
+        <div class="acciones">
+            <a href="NuevaHabitacion.html" class="btn-nuevo">+ Nueva Habitación</a>
+        </div>
+
+        <!-- Se corrigió a tu estructura de tabla -->
+        <div class="tabla-container">
+            <h2>Lista de Habitaciones</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Habitación</th>
+                        <th>Categoría</th>
+                        <th>Hotel</th>
+                        <th>Capacidad</th>
+                        <th>Tarifa</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>401A</td>
+                        <td>Suite Presidencial</td>
+                        <td>Marriott Cancún Resort</td>
+                        <td>4 Huéspedes</td>
+                        <td>$5,500 MXN</td>
+                        <td style="color: #155724; font-weight: bold;">Disponible</td>
+                        <td>
+                            <a href="EditarHabitacion.html?id=1" class="btn-editar">✏ Editar</a>
+                            <a href="EliminarHabitacion.html?id=1" class="btn-eliminar">🗑 Eliminar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>205B</td>
+                        <td>Habitación Doble</td>
+                        <td>Marriott Los Cabos</td>
+                        <td>4 Huéspedes</td>
+                        <td>$3,200 MXN</td>
+                        <td style="color: #856404; font-weight: bold;">En Mantenimiento</td>
+                        <td>
+                            <a href="EditarHabitacion.html?id=2" class="btn-editar">✏ Editar</a>
+                            <a href="EliminarHabitacion.html?id=2" class="btn-eliminar">🗑 Eliminar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>112C</td>
+                        <td>Habitación Sencilla</td>
+                        <td>Marriott Puerto Vallarta</td>
+                        <td>2 Huéspedes</td>
+                        <td>$1,800 MXN</td>
+                        <td style="color: #383d41; font-weight: bold;">No Disponible</td>
+                        <td>
+                            <a href="EditarHabitacion.html?id=3" class="btn-editar">✏ Editar</a>
+                            <a href="EliminarHabitacion.html?id=3" class="btn-eliminar">🗑 Eliminar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("oculto");
+            document.getElementById("main").classList.toggle("expandido");
+        }
+    </script>
+    <script src="js/PanelHabitaciones.js"></script>
+</body>
+</html>

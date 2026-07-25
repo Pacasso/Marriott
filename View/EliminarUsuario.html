@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Usuario - Marriott</title>
+    <link rel="stylesheet" href="css/EliminarUsuario.css">
+    <script src="js/auth.js"></script>
+</head>
+<body>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <div class="logo-panel">Marriott</div>
+        <ul>
+            <li><a href="Panel.html">🏠 Inicio</a></li>
+            <li><a href="PanelUsuarios.html" class="activo">👥 Usuarios</a></li>
+            <li><a href="Destinos.html">🌎 Destinos</a></li>
+            <li><a href="PanelHoteles.html">🏨 Hoteles</a></li>
+            <li><a href="PanelHabitaciones.html">🛏 Habitaciones</a></li>
+            <li><a href="PanelReservaciones.html">📅 Reservaciones</a></li>
+            <li><a href="PanelServicios.html">⭐ Servicios</a></li>
+            <li><a href="#" onclick="cerrarSesion(event)">🚪 Cerrar Sesión</a></li>
+        </ul>
+    </div>
+
+    <div class="main" id="main">
+
+        <div class="contenedor-formulario caja-alerta">
+            
+            <div class="header-alerta">
+                <h1>⚠️ Confirmar Eliminación</h1>
+                <p>Está a punto de dar de baja al siguiente usuario del sistema.</p>
+            </div>
+
+            <div class="info-usuario">
+                <!-- Fila 1 -->
+                <div class="fila-doble">
+                    <div class="columna" style="flex: 0.3;">
+                        <label>ID</label>
+                        <input type="text" id="id_usuario" value="1" disabled class="input-deshabilitado">
+                    </div>
+                    <div class="columna">
+                        <label>Nombre Completo</label>
+                        <input type="text" id="nombre_usuario" value="Carlos Sánchez" disabled class="input-deshabilitado">
+                    </div>
+                </div>
+
+                <!-- Fila 2 -->
+                <div class="fila-doble">
+                    <div class="columna">
+                        <label>Correo Electrónico</label>
+                        <input type="text" id="correo_usuario" value="admin@marriott.com" disabled class="input-deshabilitado">
+                    </div>
+                    <div class="columna">
+                        <label>Rol de Acceso</label>
+                        <input type="text" id="rol_usuario" value="Administrador" disabled class="input-deshabilitado">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mensaje-validacion">
+                <strong>Nota de Seguridad:</strong> El sistema validará que este usuario no sea el mismo que tiene la sesión activa actualmente para prevenir bloqueos de acceso.
+            </div>
+
+            <div class="botones">
+                <button type="button" id="btn_confirmar_eliminar">Sí, Eliminar Usuario</button>
+                <a href="PanelUsuarios.html" class="btn-cancelar">Cancelar</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("oculto");
+            document.getElementById("main").classList.toggle("expandido");
+        }
+    </script>
+    <script src="js/eliminarUsuario.js"></script>
+</body>
+</html>

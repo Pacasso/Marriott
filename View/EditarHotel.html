@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Hotel - Marriott</title>
+    <link rel="stylesheet" href="css/EditarHotel.css">
+    <script src="js/auth.js"></script>
+</head>
+<body>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <div class="logo-panel">Marriott</div>
+        <ul>
+            <li><a href="Panel.html">🏠 Inicio</a></li>
+            <li><a href="PanelUsuarios.html">👥 Usuarios</a></li>
+            <li><a href="Destinos.html">🌎 Destinos</a></li>
+            <li><a href="PanelHoteles.html" class="activo">🏨 Hoteles</a></li>
+            <li><a href="PanelHabitaciones.html">🛏 Habitaciones</a></li>
+            <li><a href="PanelReservaciones.html">📅 Reservaciones</a></li>
+            <li><a href="PanelServicios.html">⭐ Servicios</a></li>
+            <li><a href="#" onclick="cerrarSesion(event)">🚪 Cerrar Sesión</a></li>
+        </ul>
+    </div>
+
+    <div class="main" id="main">
+
+        <div class="contenedor-formulario">
+            <h1>Editar Hotel</h1>
+            <p class="subtitulo">Modifique los datos de la sucursal seleccionada.</p>
+
+            <form>
+                <div class="fila-doble">
+                    <div class="columna" style="flex: 0.3;">
+                        <label>ID del Hotel</label>
+                        <input type="text" id="id_hotel" disabled class="input-deshabilitado">
+                    </div>
+                    <div class="columna">
+                        <label>Nombre del Hotel</label>
+                        <input type="text" id="nombre_hotel" placeholder="Ej. Marriott Reforma">
+                    </div>
+                </div>
+
+                <label>Ubicación (Entidad Federativa)</label>
+                <select id="estado_hotel">
+                    <option value="">Seleccione un estado...</option>
+                    </select>
+
+                <div class="fila-doble">
+                    <div class="columna">
+                        <label>Número de Habitaciones</label>
+                        <input type="number" id="habitaciones_hotel" placeholder="Ej. 250" min="1">
+                    </div>
+                    
+                    <div class="columna">
+                        <label>Categoría</label>
+                        <select id="categoria_hotel">
+                            <option value="5 Estrellas">⭐⭐⭐⭐⭐ 5 Estrellas</option>
+                            <option value="4 Estrellas">⭐⭐⭐⭐ 4 Estrellas</option>
+                            <option value="3 Estrellas">⭐⭐⭐ 3 Estrellas</option>
+                            <option value="Resort">Resort & Spa</option>
+                            <option value="Boutique">Boutique</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="fila-doble">
+                    <div class="columna">
+                        <label>Tarifa Base Promedio (MXN)</label>
+                        <input type="number" id="tarifa_hotel" placeholder="Ej. 2500.00" min="0" step="0.01">
+                    </div>
+                    <div class="columna">
+                        <label>Estado del Registro</label>
+                        <select id="estatus_hotel">
+                            <option value="1">Activo / Operando</option>
+                            <option value="0">Inactivo / En Construcción</option>
+                        </select>
+                    </div>
+                </div>
+
+                <label>Servicios Disponibles</label>
+                <div class="grupo-checkbox">
+                    <div id="contenedor_servicios">
+                        <span style="color: #666; font-size: 14px;">Cargando servicios del catálogo...</span>
+                    </div>
+                </div>
+
+                <label>Promociones Especiales Vigentes</label>
+                <input type="text" id="promociones_hotel" placeholder="Ej. 20% descuento en temporada baja, Desayuno incluido">
+
+                <label>Fotografía Principal del Hotel (Opcional si no desea cambiarla)</label>
+                <div class="preview">
+                    <img id="preview_imagen" src="" alt="Vista previa de la imagen">
+                </div>
+                <input type="file" id="imagen_hotel" accept="image/*">
+
+                <div class="botones">
+                    <button type="button" id="btn_actualizar">Actualizar Hotel</button>
+                    <a href="PanelHoteles.html" class="btn-cancelar">Cancelar</a>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("oculto");
+            document.getElementById("main").classList.toggle("expandido");
+        }
+    </script>
+    <script src="js/editarHotel.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Habitación - Marriott</title>
+    <link rel="stylesheet" href="css/EditarHabitacion.css">
+    <script src="js/auth.js"></script>
+</head>
+<body>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <div class="logo-panel">Marriott</div>
+        <ul>
+            <li><a href="Panel.html">🏠 Inicio</a></li>
+            <li><a href="PanelUsuarios.html">👥 Usuarios</a></li>
+            <li><a href="Destinos.html">🌎 Destinos</a></li>
+            <li><a href="PanelHoteles.html">🏨 Hoteles</a></li>
+            <li><a href="PanelHabitaciones.html" class="activo">🛏 Habitaciones</a></li>
+            <li><a href="PanelReservaciones.html">📅 Reservaciones</a></li>
+            <li><a href="PanelServicios.html">⭐ Servicios</a></li>
+            <li><a href="#" onclick="cerrarSesion(event)">🚪 Cerrar Sesión</a></li>
+        </ul>
+    </div>
+
+    <div class="main" id="main">
+
+        <div class="contenedor-formulario">
+            
+            <div class="header-formulario">
+                <h1>Editar Habitación</h1>
+                <p>Modifique los datos de la habitación seleccionada. Asegúrese de guardar los cambios.</p>
+            </div>
+
+            <form>
+                <!-- Fila 0: ID (Solo Lectura) -->
+                <div class="fila-doble">
+                    <div class="columna" style="flex: 0.4;">
+                        <label>ID Habitación</label>
+                        <input type="text" id="id_habitacion" value="1" disabled class="input-form input-deshabilitado">
+                    </div>
+                    <div class="columna">
+                        <!-- Espacio vacío para alinear -->
+                    </div>
+                </div>
+
+                <!-- Fila 1: Hotel y Número -->
+                <div class="fila-doble">
+                    <div class="columna">
+                        <label>Hotel de Asignación</label>
+                        <select id="id_hotel" class="input-form">
+                            <option value="1" selected>Marriott Cancún Resort</option>
+                            <option value="2">Marriott Los Cabos</option>
+                            <option value="3">Marriott Puerto Vallarta</option>
+                        </select>
+                    </div>
+                    <div class="columna">
+                        <label>Número o Identificador</label>
+                        <input type="text" id="numero_habitacion" class="input-form" value="401A">
+                    </div>
+                </div>
+
+                <!-- Fila 2: Categoría y Capacidad -->
+                <div class="fila-doble">
+                    <div class="columna">
+                        <label>Categoría</label>
+                        <select id="categoria_habitacion" class="input-form">
+                            <option value="Sencilla">Sencilla</option>
+                            <option value="Doble">Doble</option>
+                            <option value="Suite">Suite</option>
+                            <option value="Suite Presidencial" selected>Suite Presidencial</option>
+                        </select>
+                    </div>
+                    <div class="columna">
+                        <label>Capacidad (Huéspedes)</label>
+                        <input type="number" id="capacidad_habitacion" class="input-form" value="4" min="1" max="10">
+                    </div>
+                </div>
+
+                <!-- Fila 3: Tarifa y Estado -->
+                <div class="fila-doble">
+                    <div class="columna">
+                        <label>Tarifa Base (MXN por noche)</label>
+                        <input type="number" id="tarifa_habitacion" class="input-form" value="5500.00" min="0" step="0.01">
+                    </div>
+                    <div class="columna">
+                        <label>Estado Operativo</label>
+                        <select id="estatus_habitacion" class="input-form">
+                            <option value="Disponible" selected>Disponible</option>
+                            <option value="En Mantenimiento">En Mantenimiento</option>
+                            <option value="No Disponible">No Disponible</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="botones">
+                    <button type="button" id="btn_actualizar" class="btn-actualizar">Actualizar Habitación</button>
+                    <a href="PanelHabitaciones.html" class="btn-cancelar">Cancelar</a>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("oculto");
+            document.getElementById("main").classList.toggle("expandido");
+        }
+    </script>
+    <script src="js/editarHabitacion.js"></script>
+</body>
+</html>

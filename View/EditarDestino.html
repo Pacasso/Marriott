@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Destino</title>
+    <link rel="stylesheet" href="css/EditarDestino.css">
+    <script src="js/auth.js"></script>
+</head>
+<body>
+
+<div class="contenedor">
+
+    <h1>Editar Destino</h1>
+
+    <form>
+
+        <label>ID del Destino</label>
+        <input type="text" id="id_destino" readonly>
+
+        <label>Nombre del Destino</label>
+        <input type="text" id="nombre_destino">
+
+        <label>Entidad Federativa</label>
+        <select id="estado_destino">
+            <option value="">Seleccione un estado...</option>
+        </select>
+
+        <label>Descripción</label>
+        <input type="text" id="descripcion_destino" placeholder="Descripción breve del destino">
+
+        <label>Atracciones Turísticas</label>
+        <input type="text" id="atracciones_destino" placeholder="Principales atracciones del destino">
+
+        <label>Imagen del Destino</label>
+        
+        <div class="preview">
+            <img id="preview_imagen" src="" alt="Vista previa">
+        </div>
+
+        <input type="file" id="imagen_destino" accept="image/*">
+
+        <label>Estado</label>
+        <select id="estatus_destino">
+            <option value="1">Activo</option>
+            <option value="0">Inactivo</option>
+        </select>
+
+        <div class="botones">
+            <a href="#" id="btn_actualizar" class="btn-actualizar">
+                Actualizar
+            </a>
+
+            <a href="Destinos.html" class="btn-cancelar">
+                Cancelar
+            </a>
+        </div>
+
+    </form>
+
+</div>
+
+ <script src="js/editarDestino.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <script src="js/auth.js"></script>
+    <link rel="stylesheet" href="css/Panel.css">
+</head>
+
+<body>
+
+    <body>
+
+<button class="menu-btn" onclick="toggleMenu()">
+    ☰
+</button>
+
+<div class="sidebar" id="sidebar">
+
+        <div class="logo-panel">
+            Marriott
+        </div>
+
+        <ul>
+
+            <li><a href="PanelUsuarios.html"> 👥 Usuarios</a></li>
+            <li><a href="Destinos.html">🏖 Destinos</a></li>
+            <li><a href="PanelHoteles.html">🏨 Hoteles</a></li>
+             <li><a href="PanelHabitaciones.html">🏨 Habitaciones</a></li>
+            <li><a href="PanelReservaciones.html">📅 Reservaciones</a></li>
+            <li><a href="PanelServicios.html">⭐ Servicios</a></li>
+            <li><a href="#" onclick="cerrarSesion(event)">🚪 Cerrar Sesión</a></li>
+
+        </ul>
+
+    </div>
+
+    <div class="main">
+
+        <div class="header-panel">
+
+            <h1>Panel de Administración</h1>
+
+            <p>Sistema Integral de Gestión y Reservaciones Hoteleras</p>
+
+        </div>
+
+        <div class="alerta">
+
+            Bienvenido Administrador. Desde aquí podrá gestionar hoteles, reservaciones y servicios.
+
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <h2>15</h2>
+                <p>Hoteles Registrados</p>
+            </div>
+
+            <div class="card">
+                <h2>250</h2>
+                <p>Reservaciones Activas</p>
+            </div>
+
+            <div class="card">
+                <h2>30</h2>
+                <p>Destinos Disponibles</p>
+            </div>
+
+            <div class="card">
+                <h2>500</h2>
+                <p>Usuarios Registrados</p>
+            </div>
+
+        </div>
+
+        <div class="tabla-container">
+
+            <h2>Reservaciones Recientes</h2>
+
+            <table>
+
+                <tr>
+                    <th>Cliente</th>
+                    <th>Hotel</th>
+                    <th>Fecha Entrada</th>
+                    <th>Estado</th>
+                </tr>
+
+                <tr>
+                    <td>Juan Pérez</td>
+                    <td>Marriott Cancún</td>
+                    <td>15/06/2026</td>
+                    <td>Confirmada</td>
+                </tr>
+
+                <tr>
+                    <td>Ana López</td>
+                    <td>Marriott Puerto Vallarta</td>
+                    <td>18/06/2026</td>
+                    <td>Pendiente</td>
+                </tr>
+
+                <tr>
+                    <td>Carlos Ruiz</td>
+                    <td>Marriott Los Cabos</td>
+                    <td>22/06/2026</td>
+                    <td>Confirmada</td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <script src="js/menu.js"></script>
+
+</body>
+
+</html>

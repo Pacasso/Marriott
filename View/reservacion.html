@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservación - Marriott International</title>
+    <link rel="stylesheet" href="css/reservacion.css">
+</head>
+<body>
+
+    <div class="reservacion-container">
+
+        <h2>Reservar Habitación</h2>
+
+        <form>
+
+            <label>Nombre Completo</label>
+            <input type="text" required>
+
+            <label>Correo Electrónico</label>
+            <input type="email" required>
+
+            <label>Fecha de Entrada</label>
+            <input type="date" required>
+
+            <label>Fecha de Salida</label>
+            <input type="date" required>
+
+            <label>Tipo de Habitación</label>
+            <select required>
+                <option>Suite Ejecutiva</option>
+                <option>Habitación Deluxe</option>
+                <option>Suite Presidencial</option>
+                <option>Habitación Familiar</option>
+            </select>
+
+            <label>Número de Huéspedes</label>
+            <input type="number" min="1" max="10" required>
+
+            <button type="submit">Confirmar Reservación</button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

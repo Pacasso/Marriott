@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoteles - Marriott</title>
+    <link rel="stylesheet" href="css/PanelHoteles.css"> 
+    <script src="js/auth.js"></script>
+</head>
+
+<body>
+
+    <button class="menu-btn" onclick="toggleMenu()">
+        ☰
+    </button>
+
+    <div class="sidebar" id="sidebar">
+
+        <div class="logo-panel">
+            Marriott
+        </div>
+
+        <ul>
+            <li><a href="Panel.html">🏠 Inicio</a></li>
+            <li><a href="PanelUsuarios.html">👥 Usuarios</a></li>
+            <li><a href="Destinos.html">🌎 Destinos</a></li>
+            <li><a href="PanelHoteles.html" class="activo">🏨 Hoteles</a></li>
+            <li><a href="PanelHabitaciones.html">🛏 Habitaciones</a></li>
+            <li><a href="PanelReservaciones.html">📅 Reservaciones</a></li>
+            <li><a href="PanelServicios.html">⭐ Servicios</a></li> <li><a href="#" onclick="cerrarSesion(event)">🚪 Cerrar Sesión</a></li>
+        </ul>
+
+    </div>
+
+    <div class="main" id="main">
+
+        <div class="header-panel">
+            <h1>Gestión de Hoteles</h1>
+            <p>
+                Administración integral del catálogo de hoteles registrados en la cadena.
+            </p>
+        </div>
+
+        <div class="busqueda">
+            <h2>Buscar Hotel</h2>
+            <div class="form-busqueda">
+                <input type="text" id="input_busqueda" placeholder="Buscar por nombre, ubicación o ID...">
+                <button id="btn_buscar">Buscar</button>
+            </div>
+        </div>
+
+        <div class="acciones">
+            <a href="NuevoHotel.html" class="btn-nuevo">
+                + Nuevo Hotel
+            </a>
+        </div>
+
+        <div class="tabla-container">
+
+            <h2>Lista de Hoteles</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre del Hotel</th>
+                        <th>Ubicación</th>
+                        <th>Categoría</th>
+                        <th>Habitaciones</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Marriott Cancún Resort</td>
+                        <td>Cancún, Quintana Roo</td>
+                        <td>5 Estrellas</td>
+                        <td>450</td>
+                        <td>Activo</td>
+                        <td>
+                            <a href="EditarHotel.html?id=1" class="btn-editar" >✏ Editar</a>
+                            <a href="EliminarHotel.html?id=1" class="btn-eliminar" >🗑 Eliminar</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>Marriott Los Cabos</td>
+                        <td>Los Cabos, Baja California Sur</td>
+                        <td>5 Estrellas</td>
+                        <td>250</td>
+                        <td>Activo</td>
+                        <td>
+                            <a href="EditarHotel.html?id=2" class="btn-editar">✏ Editar</a>
+                            <a href="EliminarHotel.html?id=2" class="btn-eliminar" >🗑 Eliminar</a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>Marriott Puerto Vallarta</td>
+                        <td>Puerto Vallarta, Jalisco</td>
+                        <td>4 Estrellas</td>
+                        <td>180</td>
+                        <td>Inactivo</td>
+                        <td>
+                            <a href="EditarHotel.html?id=3" class="btn-editar" >✏ Editar</a>
+                            <a href="EliminarHotel.html?id=3" class="btn-eliminar" >🗑 Eliminar</a>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("oculto");
+            document.getElementById("main").classList.toggle("expandido");
+        }
+    </script>
+    <script src="js/panelHoteles.js"></script>
+
+</body>
+
+</html>

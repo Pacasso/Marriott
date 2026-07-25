@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinos - Marriott</title>
+    <link rel="stylesheet" href="css/Destinos.css">
+    <script src="js/auth.js"></script>
+</head>
+
+<body>
+
+    <!-- BOTÓN HAMBURGUESA -->
+    <button class="menu-btn" onclick="toggleMenu()">
+        ☰
+    </button>
+
+    <!-- MENÚ LATERAL -->
+    <div class="sidebar" id="sidebar">
+
+        <div class="logo">
+            Marriott
+        </div>
+
+        <ul>
+            <li><a href="Panel.html">🏠 Inicio</a></li>
+            <li><a href="PanelUsuarios.html">👥 Usuarios</a></li>
+            <li><a href="Destinos.html" class="activo">🏖 Destinos</a></li>
+            <li><a href="PanelHoteles.html">🏨 Hoteles</a></li>
+            <li><a href="PanelHabitaciones.html">🏨 Habitaciones</a></li>
+            <li><a href="PanelReservaciones.html">📅 Reservaciones</a></li>
+            <li><a href="PanelServicios.html">⭐ Servicios</a></li>
+            <li><a href="#" onclick="cerrarSesion(event)">🚪 Cerrar Sesión</a></li>
+        </ul>
+
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="main" id="main">
+
+        <div class="header">
+            <h1>Gestión de Destinos</h1>
+            <p>Administración de destinos turísticos disponibles.</p>
+        </div>
+
+        <!-- BUSCADOR -->
+        <div class="busqueda">
+            <h2>Buscar Destino</h2>
+            <div class="form-busqueda">
+                <input type="text" id="input_busqueda" placeholder="Nombre o ID del destino">
+                <button type="button" id="btn_buscar">Buscar</button>
+            </div>
+        </div>
+
+        <!-- BOTÓN NUEVO -->
+        <div class="acciones">
+
+            <a href="NuevoDestino.html" class="btn_nuevo">
+                + Nuevo Destino
+            </a>
+
+        </div>
+
+        <!-- TABLA -->
+        <div class="tabla-container">
+
+            <h2>Lista de Destinos</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Destino</th>
+                        <th>Entidad Federativa</th>
+                        <th>Descripción</th>
+                        <th>Atracciones</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <!-- Filas de destinos se agregarán aquí dinámicamente -->
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <script src="js/destinos.js"></script>
+
+</body>
+</html>

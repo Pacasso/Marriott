@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Usuario - Marriott</title>
+    <link rel="stylesheet" href="css/NuevoUsuario.css">
+    <script src="js/auth.js"></script>
+</head>
+<body>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <div class="logo-panel">Marriott</div>
+        <ul>
+            <li><a href="Panel.html">🏠 Inicio</a></li>
+            <li><a href="PanelUsuarios.html" class="activo">👥 Usuarios</a></li>
+            <li><a href="Destinos.html">🌎 Destinos</a></li>
+            <li><a href="PanelHoteles.html">🏨 Hoteles</a></li>
+            <li><a href="PanelHabitaciones.html">🛏 Habitaciones</a></li>
+            <li><a href="PanelReservaciones.html">📅 Reservaciones</a></li>
+            <li><a href="PanelServicios.html">⭐ Servicios</a></li>
+            <li><a href="#" onclick="cerrarSesion(event)">🚪 Cerrar Sesión</a></li>
+        </ul>
+    </div>
+
+    <div class="main" id="main">
+
+        <div class="contenedor-formulario">
+            
+            <div class="header-formulario">
+                <h1>Registrar Nuevo Usuario</h1>
+                <p>Complete los siguientes campos para dar de alta a un nuevo miembro del personal.</p>
+            </div>
+
+            <form>
+                <!-- Fila 1: Nombre y Correo -->
+                <div class="fila-doble">
+                    <div class="columna">
+                        <label>Nombre Completo</label>
+                        <input type="text" id="nombre_usuario" class="input-form" placeholder="Ej. Carlos Sánchez">
+                    </div>
+                    <div class="columna">
+                        <label>Correo Electrónico Institucional</label>
+                        <input type="email" id="correo_usuario" class="input-form" placeholder="Ej. carlos.sanchez@marriott.com">
+                    </div>
+                </div>
+
+                <!-- Fila 2: Contraseña y Rol -->
+                <div class="fila-doble">
+                    <div class="columna">
+                        <label>Contraseña Temporal</label>
+                        <!-- Usamos type="text" temporalmente o type="password" según prefieras que se vea en pantalla. 
+                             Lo dejaremos como texto para que el administrador la vea al asignarla. -->
+                        <input type="text" id="password_usuario" class="input-form" placeholder="Asigne una contraseña temporal">
+                    </div>
+                    <div class="columna">
+                        <label>Rol de Acceso</label>
+                        <select id="rol_usuario" class="input-form">
+                            <option value="">Seleccione un rol...</option>
+                            <option value="Administrador">Administrador</option>
+                            <option value="Gerente">Gerente</option>
+                            <option value="Recepcionista">Recepcionista</option>
+                            <option value="Huésped">Huésped</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Fila 3: Estado -->
+                <div class="fila-doble">
+                    <div class="columna" style="flex: 0.48;">
+                        <label>Estado de la Cuenta</label>
+                        <select id="estatus_usuario" class="input-form">
+                            <option value="Activo">Activo</option>
+                            <option value="Inactivo">Inactivo</option>
+                        </select>
+                    </div>
+                    <div class="columna">
+                        <!-- Espacio vacío para mantener el diseño a dos columnas -->
+                    </div>
+                </div>
+
+                <div class="botones">
+                    <button type="button" id="btn_guardar" class="btn-guardar">Guardar Usuario</button>
+                    <a href="PanelUsuarios.html" class="btn-cancelar">Cancelar</a>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("oculto");
+            document.getElementById("main").classList.toggle("expandido");
+        }
+    </script>
+    <script src="js/nuevoUsuario.js"></script>
+</body>
+</html>

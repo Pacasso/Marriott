@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios - Marriott</title>
+    <script src="js/auth.js"></script>
+    <link rel="stylesheet" href="css/Servicios1.css">
+</head>
+
+<body>
+
+<button class="menu-btn" onclick="toggleMenu()">
+☰
+</button>
+
+<div class="sidebar" id="sidebar">
+
+    <div class="logo">
+        Marriott
+    </div>
+
+    <ul>
+
+        <li><a href="Panel.html">🏠 Inicio</a></li>
+        <li><a href="PanelUsuarios.html">👥 Usuarios</a></li>
+        <li><a href="Destinos.html">🌎 Destinos</a></li>
+        <li><a href="PanelHoteles.html">🏨 Hoteles</a></li>
+        <li><a href="PanelHabitaciones.html">🛏 Habitaciones</a></li>
+        <li><a href="PanelReservaciones.html">📅 Reservaciones</a></li>
+        <li><a href="PanelServicios.html" class="activo">⭐ Servicios</a></li>
+        <li><a href="#" onclick="cerrarSesion(event)">🚪 Cerrar Sesión</a></li>
+
+    </ul>
+
+</div>
+
+<div class="main" id="main">
+
+    <div class="encabezado">
+
+        <h1>Servicios del Hotel</h1>
+
+        <p>
+            Administra todos los servicios adicionales que ofrece el hotel.
+        </p>
+
+    </div>
+
+    <div class="barra">
+
+        <input type="text" placeholder="Buscar servicio...">
+
+        <button>Buscar</button>
+
+        <a href="NuevoServicio.html" class="nuevo">
+            + Nuevo Servicio
+        </a>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="icono">🧖</div>
+
+            <h2>Spa Premium</h2>
+
+            <p>
+                Masajes relajantes, jacuzzi y tratamientos corporales.
+            </p>
+
+            <span>$850 MXN</span>
+
+            <div class="estado disponible">
+                Disponible
+            </div>
+
+            <div class="botones">
+
+                <a href="EditarServicio.html" class="editar">
+                    ✏ Editar
+                </a>
+
+                <a href="EliminarServicio.html" class="eliminar">
+                    🗑 Eliminar
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icono">🍽</div>
+
+            <h2>Restaurante</h2>
+
+            <p>
+                Buffet internacional y servicio gourmet.
+            </p>
+
+            <span>$650 MXN</span>
+
+            <div class="estado disponible">
+                Disponible
+            </div>
+
+            <div class="botones">
+
+                <a href="EditarServicio.html" class="editar">
+                    ✏ Editar
+                </a>
+
+                <a href="EliminarServicio.html" class="eliminar">
+                    🗑 Eliminar
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icono">📶</div>
+
+            <h2>WiFi Premium</h2>
+
+            <p>
+                Internet ilimitado de alta velocidad.
+            </p>
+
+            <span>$150 MXN</span>
+
+            <div class="estado disponible">
+                Disponible
+            </div>
+
+            <div class="botones">
+
+                <a href="EditarServicio.html" class="editar">
+                    ✏ Editar
+                </a>
+
+                <a href="EliminarServicio.html" class="eliminar">
+                    🗑 Eliminar
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <div class="icono">🚗</div>
+
+            <h2>Estacionamiento VIP</h2>
+
+            <p>
+                Cajón privado con vigilancia las 24 horas.
+            </p>
+
+            <span>$120 MXN</span>
+
+            <div class="estado disponible">
+                Disponible
+            </div>
+
+            <div class="botones">
+
+                <a href="EditarServicio.html" class="editar">
+                    ✏ Editar
+                </a>
+
+                <a href="EliminarServicio.html" class="eliminar">
+                    🗑 Eliminar
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function toggleMenu(){
+document.getElementById("sidebar").classList.toggle("active");
+document.getElementById("main").classList.toggle("active");
+
+}
+</script>
+<script src="js/panelServicios.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Habitación - Marriott</title>
+    <link rel="stylesheet" href="css/EliminarHabitacion.css">
+    <script src="js/auth.js"></script>
+</head>
+<body>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <div class="logo-panel">Marriott</div>
+        <ul>
+            <li><a href="Panel.html">🏠 Inicio</a></li>
+            <li><a href="PanelUsuarios.html">👥 Usuarios</a></li>
+            <li><a href="Destinos.html">🌎 Destinos</a></li>
+            <li><a href="PanelHoteles.html">🏨 Hoteles</a></li>
+            <li><a href="PanelHabitaciones.html" class="activo">🛏 Habitaciones</a></li>
+            <li><a href="PanelReservaciones.html">📅 Reservaciones</a></li>
+            <li><a href="PanelServicios.html">⭐ Servicios</a></li>
+            <li><a href="#" onclick="cerrarSesion(event)">🚪 Cerrar Sesión</a></li>
+        </ul>
+    </div>
+
+    <div class="main" id="main">
+
+        <div class="contenedor-formulario caja-alerta">
+            
+            <div class="header-alerta">
+                <h1>⚠️ Confirmar Eliminación</h1>
+                <p>Está a punto de dar de baja la siguiente habitación del sistema.</p>
+            </div>
+
+            <div class="info-habitacion">
+                <!-- Fila 1 -->
+                <div class="fila-doble">
+                    <div class="columna" style="flex: 0.3;">
+                        <label>ID</label>
+                        <input type="text" id="id_habitacion" value="1" disabled class="input-deshabilitado">
+                    </div>
+                    <div class="columna">
+                        <label>Número o Identificador</label>
+                        <input type="text" id="numero_habitacion" value="401A" disabled class="input-deshabilitado">
+                    </div>
+                </div>
+
+                <!-- Fila 2 -->
+                <div class="fila-doble">
+                    <div class="columna">
+                        <label>Categoría</label>
+                        <input type="text" id="categoria_habitacion" value="Suite Presidencial" disabled class="input-deshabilitado">
+                    </div>
+                    <div class="columna">
+                        <label>Hotel Asignado</label>
+                        <input type="text" id="hotel_habitacion" value="Marriott Cancún Resort" disabled class="input-deshabilitado">
+                    </div>
+                </div>
+
+                <!-- Fila 3 -->
+                <div class="fila-doble">
+                    <div class="columna">
+                        <label>Tarifa Base</label>
+                        <input type="text" id="tarifa_habitacion" value="$5,500.00 MXN" disabled class="input-deshabilitado">
+                    </div>
+                    <div class="columna">
+                        <label>Estado Actual</label>
+                        <input type="text" id="estatus_habitacion" value="Disponible" disabled class="input-deshabilitado">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mensaje-validacion">
+                <strong>Nota de Integridad:</strong> El sistema validará que esta habitación no cuente con reservaciones activas o futuras antes de procesar la eliminación definitiva.
+            </div>
+
+            <div class="botones">
+                <button type="button" id="btn_confirmar_eliminar">Sí, Eliminar Habitación</button>
+                <a href="PanelHabitaciones.html" class="btn-cancelar">Cancelar</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("oculto");
+            document.getElementById("main").classList.toggle("expandido");
+        }
+    </script>
+    <script src="js/eliminarHabitacion.js"></script>
+</body>
+</html>

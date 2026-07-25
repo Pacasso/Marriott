@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Reservación - Marriott</title>
+    
+    <!-- Guardián de seguridad -->
+    <script src="js/auth.js"></script>
+    
+    <link rel="stylesheet" href="css/EliminarReservacion.css">
+</head>
+<body>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <div class="logo-panel">Marriott</div>
+        <ul>
+            <li><a href="Panel.html">🏠 Inicio</a></li>
+            <li><a href="PanelUsuarios.html">👥 Usuarios</a></li>
+            <li><a href="Destinos.html">🌎 Destinos</a></li>
+            <li><a href="PanelHoteles.html">🏨 Hoteles</a></li>
+            <li><a href="PanelHabitaciones.html">🛏 Habitaciones</a></li>
+            <li><a href="PanelReservaciones.html" class="activo">📅 Reservaciones</a></li>
+            <li><a href="PanelServicios.html">⭐ Servicios</a></li>
+            <li><a href="#" onclick="cerrarSesion(event)">🚪 Cerrar Sesión</a></li>
+        </ul>
+    </div>
+
+    <div class="main" id="main">
+
+        <div class="contenedor-formulario">
+            
+            <div class="header-alerta">
+                <h1>⚠️ Confirmar Eliminación</h1>
+                <p>¿Está seguro de que desea eliminar permanentemente la siguiente reservación? Esta acción no se puede deshacer.</p>
+            </div>
+
+            <form>
+                <div class="info-reservacion">
+                    <!-- Fila 1: Folio y Huésped -->
+                    <div class="fila-doble">
+                        <div class="columna" style="flex: 0.4;">
+                            <label>Folio</label>
+                            <input type="text" value="#RES-001" disabled class="input-deshabilitado">
+                        </div>
+                        <div class="columna">
+                            <label>Huésped</label>
+                            <input type="text" value="Juan Francisco Meneses Blé" disabled class="input-deshabilitado">
+                        </div>
+                    </div>
+
+                    <!-- Fila 2: Hotel y Habitación -->
+                    <div class="fila-doble">
+                        <div class="columna">
+                            <label>Hotel</label>
+                            <input type="text" value="Marriott Cancún Resort" disabled class="input-deshabilitado">
+                        </div>
+                        <div class="columna">
+                            <label>Habitación</label>
+                            <input type="text" value="Suite Presidencial (101)" disabled class="input-deshabilitado">
+                        </div>
+                    </div>
+
+                    <!-- Fila 3: Fechas y Costo -->
+                    <div class="fila-doble">
+                        <div class="columna">
+                            <label>Fechas (Check-in / Check-out)</label>
+                            <input type="text" value="25/Jul/26 al 30/Jul/26" disabled class="input-deshabilitado">
+                        </div>
+                        <div class="columna">
+                            <label>Costo Total Estimado</label>
+                            <input type="text" value="$25,000.00 MXN" disabled class="input-deshabilitado">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mensaje-validacion">
+                    <strong>Nota de sistema:</strong> Al eliminar esta reservación, la habitación asociada quedará disponible nuevamente para las fechas indicadas.
+                </div>
+
+                <div class="botones">
+                    <button type="button" id="btn_confirmar_eliminar">Sí, Eliminar Reservación</button>
+                    <a href="PanelReservaciones.html" class="btn-cancelar">Cancelar</a>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("oculto");
+            document.getElementById("main").classList.toggle("expandido");
+        }
+    </script>
+    <script src="js/eliminarReservacion.js"></script>
+</body>
+</html>

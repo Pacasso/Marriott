@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - Marriott</title>
+    <link rel="stylesheet" href="css/Login.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-box">
+            
+            <div class="login-header">
+                <h2>Marriott</h2>
+            </div>
+
+            <form id="form_login">
+                <div class="grupo-input">
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" id="correo" placeholder="ejemplo@marriott.com" required>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" id="contrasena" placeholder="Ingrese su contraseña" required>
+                </div>
+
+                <div id="mensaje_error" class="mensaje-error" style="display: none;">
+                    Credenciales incorrectas.
+                </div>
+
+                <button type="submit" class="btn-login" id="btn_ingresar">Ingresar al Sistema</button>
+            </form>
+
+            <div class="login-footer">
+                <p>¿Problemas para acceder? Contacte a soporte de TI.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario - Marriott</title>
+    <link rel="stylesheet" href="css/EditarUsuario.css">
+    <script src="js/auth.js"></script>
+</head>
+<body>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <div class="logo-panel">Marriott</div>
+        <ul>
+            <li><a href="Panel.html">🏠 Inicio</a></li>
+            <li><a href="PanelUsuarios.html" class="activo">👥 Usuarios</a></li>
+            <li><a href="Destinos.html">🌎 Destinos</a></li>
+            <li><a href="PanelHoteles.html">🏨 Hoteles</a></li>
+            <li><a href="PanelHabitaciones.html">🛏 Habitaciones</a></li>
+            <li><a href="PanelReservaciones.html">📅 Reservaciones</a></li>
+            <li><a href="PanelServicios.html">⭐ Servicios</a></li>
+            <li><a href="#" onclick="cerrarSesion(event)">🚪 Cerrar Sesión</a></li>
+        </ul>
+    </div>
+
+    <div class="main" id="main">
+
+        <div class="contenedor-formulario">
+            
+            <div class="header-formulario">
+                <h1>Editar Usuario</h1>
+                <p>Modifique los datos y permisos de acceso del usuario seleccionado.</p>
+            </div>
+
+            <form>
+                <!-- Fila 0: ID (Solo Lectura) -->
+                <div class="fila-doble">
+                    <div class="columna" style="flex: 0.4;">
+                        <label>ID Usuario</label>
+                        <input type="text" id="id_usuario" value="1" disabled class="input-form input-deshabilitado">
+                    </div>
+                    <div class="columna">
+                        <!-- Espacio vacío para alinear -->
+                    </div>
+                </div>
+
+                <!-- Fila 1: Nombre y Correo -->
+                <div class="fila-doble">
+                    <div class="columna">
+                        <label>Nombre Completo</label>
+                        <input type="text" id="nombre_usuario" class="input-form" value="Carlos Sánchez">
+                    </div>
+                    <div class="columna">
+                        <label>Correo Electrónico Institucional</label>
+                        <input type="email" id="correo_usuario" class="input-form" value="admin@marriott.com">
+                    </div>
+                </div>
+
+                <!-- Fila 2: Rol y Estado -->
+                <div class="fila-doble">
+                    <div class="columna">
+                        <label>Rol de Acceso</label>
+                        <select id="rol_usuario" class="input-form">
+                            <option value="Administrador" selected>Administrador</option>
+                            <option value="Gerente">Gerente</option>
+                            <option value="Recepcionista">Recepcionista</option>
+                        </select>
+                    </div>
+                    <div class="columna">
+                        <label>Estado de la Cuenta</label>
+                        <select id="estatus_usuario" class="input-form">
+                            <option value="Activo" selected>Activo</option>
+                            <option value="Inactivo">Inactivo</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Nota de seguridad sobre la contraseña -->
+                <div class="mensaje-seguridad" style="margin-top: -5px; margin-bottom: 25px; font-size: 13px; color: #666;">
+                    <em>* Por motivos de seguridad, la contraseña no se muestra. Si el usuario requiere restablecerla, debe usar el flujo de recuperación.</em>
+                </div>
+
+                <div class="botones">
+                    <button type="button" id="btn_actualizar" class="btn-actualizar">Actualizar Usuario</button>
+                    <a href="PanelUsuarios.html" class="btn-cancelar">Cancelar</a>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("oculto");
+            document.getElementById("main").classList.toggle("expandido");
+        }
+    </script>
+    <script src="js/editarUsuario.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservaciones - Marriott</title>
+    
+    <!-- Guardián de seguridad -->
+    <script src="js/auth.js"></script>
+    
+    <link rel="stylesheet" href="css/PanelReservaciones.css">
+</head>
+<body>
+
+    <button class="menu-btn" id="btn_menu">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <!-- Corregido a tu clase .logo -->
+        <div class="logo">Marriott</div> 
+        <ul>
+            <li><a href="Panel.html">🏠 Inicio</a></li>
+            <li><a href="PanelUsuarios.html">👥 Usuarios</a></li>
+            <li><a href="Destinos.html">🌎 Destinos</a></li>
+            <li><a href="PanelHoteles.html">🏨 Hoteles</a></li>
+            <li><a href="PanelHabitaciones.html">🛏 Habitaciones</a></li>
+            <li><a href="PanelReservaciones.html" class="activo">📅 Reservaciones</a></li>
+            <li><a href="PanelServicios.html">⭐ Servicios</a></li>
+            <li><a href="#" onclick="cerrarSesion(event)">🚪 Cerrar Sesión</a></li>
+        </ul>
+    </div>
+
+    <div class="main" id="main">
+        
+        <!-- Corregido a tu clase .header -->
+        <div class="header">
+            <h1>Gestión de Reservaciones</h1>
+            <p>Consulte y administre las estadías de los huéspedes en todos los hoteles.</p>
+        </div>
+
+        <!-- Corregido a tus clases .busqueda y .form-busqueda -->
+        <div class="busqueda">
+            <h2>Buscar Reservación</h2>
+            <div class="form-busqueda">
+                <input type="text" id="input_busqueda" placeholder="Buscar por Folio, Huésped o Estado...">
+                <button id="btn_buscar">Buscar</button>
+            </div>
+        </div>
+
+        <!-- Corregido a tus clases .acciones y .btn_nuevo -->
+        <div class="acciones">
+            <a href="NuevaReservacion.html" class="btn_nuevo">+ Nueva Reservación</a>
+        </div>
+
+        <!-- Corregido a tu clase .tabla-container -->
+        <div class="tabla-container">
+            <h2>Lista de Reservaciones</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Folio</th>
+                        <th>Huésped</th>
+                        <th>Hotel / Habitación</th>
+                        <th>Check-in / Check-out</th>
+                        <th>Costo Total</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>#RES-001</strong></td>
+                        <td>Juan Francisco Meneses</td>
+                        <td>Marriott Cancún<br><small>Suite Presidencial (101)</small></td>
+                        <td>25/Jul/2026<br><small>al 30/Jul/2026</small></td>
+                        <td>$25,000.00</td>
+                        <td><span class="badge badge-confirmada">Confirmada</span></td>
+                        <td>
+                            <!-- Corregido a tus clases .btn-editar y .btn-eliminar -->
+                            <a href="EditarReservacion.html?id=1" class="btn-editar">✏ Editar</a>
+                            <a href="EliminarReservacion.html?id=1" class="btn-eliminar">🗑 Eliminar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>#RES-002</strong></td>
+                        <td>Jennyfer Denis Campos</td>
+                        <td>Marriott Los Cabos<br><small>Hab. Doble (205)</small></td>
+                        <td>10/Ago/2026<br><small>al 15/Ago/2026</small></td>
+                        <td>$12,500.00</td>
+                        <td><span class="badge badge-pendiente">Pendiente</span></td>
+                        <td>
+                            <a href="EditarReservacion.html?id=2" class="btn-editar">✏ Editar</a>
+                            <a href="EliminarReservacion.html?id=2" class="btn-eliminar">🗑 Eliminar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script>
+        // JS actualizado para usar tus clases .ocultar y .expandir
+        document.getElementById("btn_menu").addEventListener("click", function() {
+            document.getElementById("sidebar").classList.toggle("ocultar");
+            document.getElementById("main").classList.toggle("expandir");
+        });
+    </script>
+    <script src="js/panelReservaciones.js"></script>
+</body>
+</html>

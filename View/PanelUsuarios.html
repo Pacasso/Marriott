@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuarios - Marriott</title>
+    <link rel="stylesheet" href="css/Usuarios.css">
+    <script src="js/auth.js"></script>
+</head>
+<body>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <div class="sidebar" id="sidebar">
+        <div class="logo-panel">Marriott</div>
+        <ul>
+            <li><a href="Panel.html">🏠 Inicio</a></li>
+            <li><a href="PanelUsuarios.html" class="activo">👥 Usuarios</a></li>
+            <li><a href="Destinos.html">🌎 Destinos</a></li>
+            <li><a href="PanelHoteles.html">🏨 Hoteles</a></li>
+            <li><a href="PanelHabitaciones.html">🛏 Habitaciones</a></li>
+            <li><a href="PanelReservaciones.html">📅 Reservaciones</a></li>
+            <li><a href="PanelServicios.html">⭐ Servicios</a></li>
+            <li><a href="#" onclick="cerrarSesion(event)">🚪 Cerrar Sesión</a></li>
+        </ul>
+    </div>
+
+    <div class="main" id="main">
+
+        <div class="header-panel">
+            <h1>Usuarios del Sistema</h1>
+            <p>Administra los accesos, roles y credenciales del personal de la cadena Marriott.</p>
+        </div>
+
+        <div class="busqueda">
+            <h2>Buscar Usuario</h2>
+            <div class="form-busqueda">
+                <input type="text" id="input_busqueda" placeholder="Buscar por nombre, correo o rol...">
+                <button id="btn_buscar">Buscar</button>
+            </div>
+        </div>
+
+        <div class="acciones">
+            <a href="NuevoUsuario.html" class="btn-nuevo">+ Nuevo Usuario</a>
+        </div>
+
+        <div class="tabla-container">
+            <h2>Lista de Usuarios</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre Completo</th>
+                        <th>Correo Electrónico</th>
+                        <th>Rol</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Carlos Sánchez</td>
+                        <td>admin@marriott.com</td>
+                        <td>Administrador</td>
+                        <td style="color: #155724; font-weight: bold;">Activo</td>
+                        <td>
+                            <a href="EditarUsuario.html?id=1" class="btn-editar">✏ Editar</a>
+                            <a href="EliminarUsuario.html?id=1" class="btn-eliminar">🗑 Eliminar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>María García</td>
+                        <td>gerencia.cancun@marriott.com</td>
+                        <td>Gerente</td>
+                        <td style="color: #155724; font-weight: bold;">Activo</td>
+                        <td>
+                            <a href="EditarUsuario.html?id=2" class="btn-editar">✏ Editar</a>
+                            <a href="EliminarUsuario.html?id=2" class="btn-eliminar">🗑 Eliminar</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Luis Hernández</td>
+                        <td>recepcion.cabos@marriott.com</td>
+                        <td>Recepcionista</td>
+                        <td style="color: #383d41; font-weight: bold;">Inactivo</td>
+                        <td>
+                            <a href="EditarUsuario.html?id=3" class="btn-editar">✏ Editar</a>
+                            <a href="EliminarUsuario.html?id=3" class="btn-eliminar">🗑 Eliminar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("sidebar").classList.toggle("oculto");
+            document.getElementById("main").classList.toggle("expandido");
+        }
+    </script>
+    <script src="js/panelUsuario.js"></script>
+</body>
+</html>
