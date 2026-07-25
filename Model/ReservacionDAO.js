@@ -6,10 +6,10 @@ class ReservacionDAO {
     static obtenerTodos(callback) {
         const query = `
             SELECT r.*, u.nombre_completo AS nombre_huesped, h.nombre AS nombre_hotel, hab.numero AS numero_habitacion 
-            FROM reservacion r
-            INNER JOIN usuario u ON r.id_usuario = u.id_usuario
-            INNER JOIN habitacion hab ON r.id_habitacion = hab.id_habitacion
-            INNER JOIN hotel h ON hab.id_hotel = h.id_hotel
+            FROM Reservacion r
+            INNER JOIN Usuario u ON r.id_usuario = u.id_usuario
+            INNER JOIN Habitacion hab ON r.id_habitacion = hab.id_habitacion
+            INNER JOIN Hotel h ON hab.id_hotel = h.id_hotel
             ORDER BY r.fecha_entrada DESC
         `;
         
@@ -47,7 +47,7 @@ class ReservacionDAO {
         reservacion.setEstadoReserva(datos.estado_reserva || 'Pendiente');
         
         const query = `
-            INSERT INTO reservacion 
+            INSERT INTO Reservacion 
             (id_usuario, id_habitacion, fecha_entrada, fecha_salida, costo_total, estado_reserva) 
             VALUES (?, ?, ?, ?, ?, ?)
         `;
@@ -68,10 +68,10 @@ class ReservacionDAO {
     static obtenerPorId(id, callback) {
         const query = `
             SELECT r.*, u.nombre_completo AS nombre_huesped, h.nombre AS nombre_hotel, hab.numero AS numero_habitacion 
-            FROM reservacion r
-            INNER JOIN usuario u ON r.id_usuario = u.id_usuario
-            INNER JOIN habitacion hab ON r.id_habitacion = hab.id_habitacion
-            INNER JOIN hotel h ON hab.id_hotel = h.id_hotel
+            FROM Reservacion r
+            INNER JOIN Usuario u ON r.id_usuario = u.id_usuario
+            INNER JOIN Habitacion hab ON r.id_habitacion = hab.id_habitacion
+            INNER JOIN Hotel h ON hab.id_hotel = h.id_hotel
             WHERE r.id_reservacion = ?
         `;
         
@@ -111,7 +111,7 @@ class ReservacionDAO {
         reservacion.setEstadoReserva(datos.estado_reserva);
 
         const query = `
-            UPDATE reservacion SET 
+            UPDATE Reservacion SET 
                 id_usuario = ?, id_habitacion = ?, fecha_entrada = ?, fecha_salida = ?, costo_total = ?, estado_reserva = ? 
             WHERE id_reservacion = ?
         `;
@@ -131,7 +131,7 @@ class ReservacionDAO {
     }
 
     static eliminar(id, callback) {
-        const query = 'DELETE FROM reservacion WHERE id_reservacion = ?';
+        const query = 'DELETE FROM Reservacion WHERE id_reservacion = ?';
         
         db.query(query, [id], (err, results) => {
             if (err) return callback(err, null);
@@ -142,10 +142,10 @@ class ReservacionDAO {
     static buscar(criterio, callback) {
         const query = `
             SELECT r.*, u.nombre_completo AS nombre_huesped, h.nombre AS nombre_hotel, hab.numero AS numero_habitacion 
-            FROM reservacion r
-            INNER JOIN usuario u ON r.id_usuario = u.id_usuario
-            INNER JOIN habitacion hab ON r.id_habitacion = hab.id_habitacion
-            INNER JOIN hotel h ON hab.id_hotel = h.id_hotel
+            FROM Reservacion r
+            INNER JOIN Usuario u ON r.id_usuario = u.id_usuario
+            INNER JOIN Habitacion hab ON r.id_habitacion = hab.id_habitacion
+            INNER JOIN Hotel h ON hab.id_hotel = h.id_hotel
             WHERE r.id_reservacion LIKE ? OR u.nombre_completo LIKE ? OR r.estado_reserva LIKE ?
         `;
         
