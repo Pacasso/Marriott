@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 1. Cargar Hoteles y luego los datos de la Habitación
-    fetch('http://localhost:3000/api/hoteles')
+    fetch('/api/hoteles')
         .then(res => res.json())
         .then(datosHoteles => {
             if (datosHoteles.success) {
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
             // Retornamos la siguiente petición para encadenarla
-            return fetch(`http://localhost:3000/api/habitaciones/${idHabitacion}`);
+            return fetch(`/api/habitaciones/${idHabitacion}`);
         })
         .then(res => res.json())
         .then(datos => {
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const datos = { id_hotel, numero, categoria, capacidad, tarifa, estatus };
 
-            fetch(`http://localhost:3000/api/habitaciones/${idHabitacion}`, {
+            fetch(`/habitaciones/${idHabitacion}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(datos)
