@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 1. Mostrar información en la alerta
-    fetch(`http://localhost:3000/api/usuarios/${idUsuario}`)
+    fetch(`/api/usuarios/${idUsuario}`)
         .then(res => res.json())
         .then(datos => {
             if (datos.success) {
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (btnConfirmar) {
         btnConfirmar.addEventListener('click', () => {
-            fetch(`http://localhost:3000/api/usuarios/${idUsuario}`, {
+            fetch(`/api/usuarios/${idUsuario}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())
