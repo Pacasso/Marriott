@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const datos = { id_rol, nombre_completo, correo_electronico, contrasena, estatus };
 
-            fetch('http://localhost:3000/api/usuarios', {
+            fetch('/api/usuarios', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(datos)
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function cargarRoles() {
-    fetch('http://localhost:3000/api/roles')
+    fetch('/api/roles')
         .then(res => res.json())
         .then(datos => {
             if (datos.success) {
