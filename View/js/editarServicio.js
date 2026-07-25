@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    fetch(`http://localhost:3000/api/servicios/${idServicio}`)
+    fetch(`/api/servicios/${idServicio}`)
         .then(res => res.json())
         .then(datos => {
             if (datos.success) {
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 estatus_activo: estatus
             };
 
-            fetch(`http://localhost:3000/api/servicios/${idServicio}`, {
+            fetch(`/api/servicios/${idServicio}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(datos)
