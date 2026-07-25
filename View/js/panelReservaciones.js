@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function cargarReservaciones(criterio = '') {
     const url = criterio 
-        ? `http://localhost:3000/api/reservaciones?q=${encodeURIComponent(criterio)}` 
-        : 'http://localhost:3000/api/reservaciones';
+        ? `/api/reservaciones?q=${encodeURIComponent(criterio)}` 
+        : '/api/reservaciones';
 
     fetch(url)
         .then(respuesta => respuesta.json())
