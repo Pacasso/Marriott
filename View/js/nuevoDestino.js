@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cargarEstados();
 
     function cargarEstados() {
-        fetch('http://localhost:3000/api/estados')
+        fetch('/api/estados')
             .then(respuesta => respuesta.json())
             .then(datos => {
                 if (datos.success) {
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             // Petición al backend
-            fetch('http://localhost:3000/api/destinos', {
+            fetch('/api/destinos', {
                 method: 'POST',
                 body: formData 
             })
