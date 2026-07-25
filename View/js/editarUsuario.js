@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 1. Cargar Roles y luego los datos del Usuario
-    fetch('http://localhost:3000/api/roles')
+    fetch('/api/roles')
         .then(res => res.json())
         .then(datosRoles => {
             if (datosRoles.success) {
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     selectRol.innerHTML += `<option value="${rol.id_rol}">${rol.nombre_rol}</option>`;
                 });
             }
-            return fetch(`http://localhost:3000/api/usuarios/${idUsuario}`);
+            return fetch(`/api/usuarios/${idUsuario}`);
         })
         .then(res => res.json())
         .then(datos => {
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const datos = { id_rol, nombre_completo, correo_electronico, estatus };
 
-            fetch(`http://localhost:3000/api/usuarios/${idUsuario}`, {
+            fetch(`/api/usuarios/${idUsuario}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(datos)
