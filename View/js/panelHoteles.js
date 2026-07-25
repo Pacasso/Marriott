@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function cargarHoteles(criterio = '') {
     // Si hay un criterio de búsqueda, armamos la URL con el parámetro 'q'
     const url = criterio 
-        ? `http://localhost:3000/api/hoteles?q=${encodeURIComponent(criterio)}` 
-        : 'http://localhost:3000/api/hoteles';
+        ? `/api/hoteles?q=${encodeURIComponent(criterio)}` 
+        : '/api/hoteles';
 
     fetch(url)
         .then(respuesta => respuesta.json())
