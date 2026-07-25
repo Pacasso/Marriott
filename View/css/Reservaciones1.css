@@ -1,0 +1,179 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#F4F6F9;
+}
+
+.menu-btn{
+    position:fixed;
+    top:15px;
+    left:15px;
+    width:50px;
+    height:50px;
+    background:#1A365D;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:28px;
+    cursor:pointer;
+    z-index:1000;
+}
+
+.sidebar{
+    position:fixed;
+    width:260px;
+    height:100vh;
+    background:#1A365D;
+    transition:.3s;
+}
+
+.sidebar.oculto{
+    transform:translateX(-260px);
+}
+
+.logo{
+    text-align:center;
+    color:#D4AF37;
+    font-size:30px;
+    font-weight:bold;
+    padding:30px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:18px 25px;
+}
+
+.sidebar ul li a:hover{
+    background:#D4AF37;
+    color:#1A365D;
+}
+
+.activo{
+    background:#D4AF37;
+    color:#1A365D !important;
+}
+
+.main{
+    margin-left:260px;
+    padding:30px;
+    transition:.3s;
+}
+
+.main.expandido{
+    margin-left:0;
+}
+
+.header,
+.busqueda,
+.tabla-container{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.busqueda,
+.tabla-container{
+    margin-top:25px;
+}
+
+.header h1,
+.busqueda h2,
+.tabla-container h2{
+    color:#1A365D;
+}
+
+.form-busqueda{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:15px;
+}
+
+.form-busqueda input{
+    flex:1;
+    min-width:220px;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.form-busqueda button{
+    background:#D4AF37;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.acciones{
+    margin-top:20px;
+    text-align:right;
+}
+
+.btn-nuevo{
+    background:#1A365D;
+    color:white;
+    text-decoration:none;
+    padding:12px 20px;
+    border-radius:8px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#1A365D;
+    color:white;
+    padding:12px;
+}
+
+td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+}
+
+.btn-editar{
+    background:#1A365D;
+    color:white;
+    text-decoration:none;
+    padding:8px 12px;
+    border-radius:6px;
+}
+
+.btn-eliminar{
+    background:#E53E3E;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+@media(max-width:900px){
+
+    .main{
+        margin-left:0;
+        padding-top:80px;
+    }
+
+    .form-busqueda{
+        flex-direction:column;
+    }
+
+}

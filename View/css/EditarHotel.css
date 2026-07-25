@@ -1,0 +1,258 @@
+/* ==========================================
+   RESETEO Y ESTILOS GENERALES
+========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #F4F6F9;
+}
+
+/* ==========================================
+   BOTÓN HAMBURGUESA Y SIDEBAR
+========================================== */
+.menu-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 50px;
+    height: 50px;
+    background: #1A365D;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-btn:hover { background: #D4AF37; color: #1A365D; }
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 260px;
+    height: 100vh;
+    background: #1A365D;
+    transition: .3s;
+}
+
+.sidebar.oculto { transform: translateX(-260px); }
+
+.logo-panel {
+    text-align: center;
+    color: #D4AF37;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 30px;
+}
+
+.sidebar ul { list-style: none; }
+
+.sidebar ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 18px 25px;
+    transition: .3s;
+}
+
+.sidebar ul li a:hover { background: #D4AF37; color: #1A365D; }
+
+.activo {
+    background: #D4AF37;
+    color: #1A365D !important;
+    font-weight: bold;
+}
+
+/* ==========================================
+   CONTENEDOR PRINCIPAL
+========================================== */
+.main {
+    margin-left: 260px;
+    padding: 30px;
+    transition: .3s;
+    display: flex;
+    justify-content: center;
+}
+
+.main.expandido {
+    margin-left: 0;
+}
+
+/* ==========================================
+   ESTILOS DEL FORMULARIO
+========================================== */
+.contenedor-formulario {
+    background: white;
+    width: 100%;
+    max-width: 800px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+.contenedor-formulario h1 {
+    color: #1A365D;
+    margin-bottom: 5px;
+}
+
+.subtitulo {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+    margin-top: 15px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #1A365D;
+}
+
+/* Campo de ID deshabilitado */
+.input-deshabilitado {
+    background-color: #e9ecef;
+    color: #6c757d;
+    cursor: not-allowed;
+    border: 1px solid #ced4da;
+}
+
+.fila-doble {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.columna {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Checkboxes para Servicios */
+.grupo-checkbox {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.grupo-checkbox label {
+    margin: 0;
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.grupo-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #1A365D;
+}
+
+/* Vista previa de imagen */
+.preview {
+    width: 100%;
+    min-height: 200px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    background: #f4f6f9;
+    overflow: hidden;
+}
+
+.preview img {
+    max-width: 100%;
+    max-height: 300px;
+    display: none;
+    border-radius: 6px;
+}
+
+input[type="file"] {
+    margin-bottom: 25px;
+}
+
+/* Botones de acción */
+.botones {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+#btn_actualizar {
+    background: #1A365D;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    flex: 1;
+}
+
+#btn_actualizar:hover { background: #2c4d80; }
+
+.btn-cancelar {
+    background: #E53E3E;
+    color: white;
+    text-decoration: none;
+    padding: 14px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    flex: 1;
+}
+
+.btn-cancelar:hover { background: #c53030; }
+
+/* ==========================================
+   RESPONSIVE (MÓVILES)
+========================================== */
+@media (max-width: 900px) {
+    .main { margin-left: 0; padding: 15px; }
+    .fila-doble { flex-direction: column; gap: 0; }
+    .grupo-checkbox { grid-template-columns: repeat(2, 1fr); }
+    .botones { flex-direction: column; }
+}
+
+@media (max-width: 500px) {
+    .grupo-checkbox { grid-template-columns: 1fr; }
+}

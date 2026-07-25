@@ -1,0 +1,193 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#F8F9FA;
+}
+
+/* MENÚ LATERAL */
+
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+
+    width:260px;
+    height:100vh;
+
+    background:#1A365D;
+}
+
+.logo-panel{
+    text-align:center;
+    color:#D4AF37;
+    font-size:30px;
+    font-weight:bold;
+    padding:30px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar ul li a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding:18px 25px;
+    transition:.3s;
+}
+
+.sidebar ul li a:hover{
+    background:#D4AF37;
+    color:#1A365D;
+}
+
+/* CONTENIDO */
+
+.main{
+    margin-left:260px;
+    padding:30px;
+}
+
+/* ENCABEZADO */
+
+.header-panel{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.header-panel h1{
+    color:#1A365D;
+}
+
+.header-panel p{
+    margin-top:10px;
+    color:#555;
+}
+
+/* BIENVENIDA */
+
+.alerta{
+    margin-top:20px;
+    background:#D4AF37;
+    color:#1A365D;
+    padding:20px;
+    border-radius:12px;
+    font-weight:bold;
+}
+
+/* TARJETAS */
+
+.cards{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+.card{
+    background:white;
+    width:220px;
+    padding:25px;
+    text-align:center;
+    border-radius:15px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.card h2{
+    color:#1A365D;
+    font-size:40px;
+}
+
+.card p{
+    margin-top:10px;
+    color:#666;
+}
+
+/* TABLA */
+
+.tabla-container{
+    margin-top:30px;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+
+.tabla-container h2{
+    margin-bottom:15px;
+    color:#1A365D;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#1A365D;
+    color:white;
+    padding:12px;
+}
+
+td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+}
+
+tr:hover{
+    background:#f1f1f1;
+}
+
+/* BOTÓN HAMBURGUESA */
+
+.menu-btn{
+    position: fixed;
+    top: 15px;
+    left: 15px;
+
+    width: 50px;
+    height: 50px;
+
+    background: #1A365D;
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 28px;
+    cursor: pointer;
+
+    z-index: 1000;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,.2);
+}
+
+.menu-btn:hover{
+    background: #D4AF37;
+    color: #1A365D;
+}
+
+/* ANIMACIÓN DEL MENÚ */
+
+.sidebar{
+    transition: all .3s ease;
+}
+
+.sidebar.oculto{
+    transform: translateX(-260px);
+}
+
+/* AJUSTE DEL CONTENIDO */
+
+.main{
+    transition: all .3s ease;
+}
+

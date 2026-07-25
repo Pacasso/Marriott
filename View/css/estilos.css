@@ -1,0 +1,364 @@
+/* RESET GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* BODY */
+body {
+    background-color: white;
+    color: #1A365D;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #1A365D;
+    color: white ;
+}
+
+/* LOGO */
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* NAV */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: white;
+    color: #1A365D;
+    border-radius: 6px;
+}
+
+/* BOTÓN LOGIN */
+nav button {
+    background-color: #c99700;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+nav button:hover {
+    background-color: #c99700;
+}
+
+/* HERO */
+.hero {
+    background-color:  white;
+    color: white;
+    padding: 80px 50px;
+    text-align: center;
+}
+
+.hero-texto h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.hero-texto p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.hero-texto button {
+    background-color: #c99700;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* HABITACIONES */
+.habitaciones {
+    padding: 60px 50px;
+    text-align: center;
+}
+
+.habitaciones h2{
+    font-size: 38px;
+    color: #1A365D;
+    margin-bottom: 15px;
+}
+
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* CARD */
+.card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px #c99700;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* IMAGEN  */
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+/* CONTENIDO CARD */
+.contenido {
+    padding: 15px;
+}
+
+.contenido h3 {
+    margin-bottom: 5px;
+}
+
+.contenido span {
+    color: #1A365D;
+    font-weight: bold;
+}
+
+/* MÓDULOS */
+.modulos {
+    padding: 60px 50px;
+    text-align: center;
+    background-color: white;
+}
+
+.contenedor-modulos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.modulo{
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(26,54,93,0.3);
+    transition: 0.3s;
+}
+
+.modulo:hover{
+    transform: translateY(-10px);
+}
+
+.modulo {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px #c99700;
+}
+
+.icono{
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.modulos h2{
+    font-size: 38px;
+    color: #1A365D;
+    margin-bottom: 15px;
+}
+
+.modulo p{
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.modulo button{
+    background: #c99700;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.modulo button:hover{
+    background: #c99700;
+}
+/*Destino*/
+.destinos{
+    padding: 80px 50px;
+    text-align: center;
+    background-color: #f5f7fa;
+}
+
+.destinos h2{
+    font-size: 38px;
+    color: #1A365D;
+    margin-bottom: 15px;
+}
+
+.destinos p{
+    color: #1A365D;
+    margin-bottom: 40px;
+}
+
+.destinos-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 25px;
+}
+
+.destino{
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px #c99700;
+    transition: 0.3s;
+}
+
+.destino:hover{
+    transform: translateY(-10px);
+}
+
+.destino img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.destino h3{
+    color: #1A365D;
+    margin: 15px 0 10px;
+}
+
+.destino p{
+    padding: 0 15px 20px;
+}
+/* FOOTER */
+footer {
+    background-color: #1A365D;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+}
+
+.hero {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    padding: 0;
+}
+
+/* imagen como fondo */
+.hero-img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+/* texto centrado encima de la imagen */
+.hero-texto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+/* botón dentro del hero */
+.hero-texto button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    background-color: #c99700;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+/* OSCURECER IMAGEN */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 1;
+}
+
+/*REDES*/
+
+.redes{
+    margin: 20px 0;
+}
+
+.redes a{
+    color: white;
+    font-size: 30px;
+    margin: 0 15px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.redes a:hover{
+    color: #c99700;
+    transform: scale(1.2);
+}
+
+/*LOGIN*/
+.btn-login{
+    background-color: #c99700;
+    color: white;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.btn-login:hover{
+    background-color: #b38600;
+}
+
+/*RESERVACION*/
+.btn-reservar{
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background-color: #c99700;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.btn-reservar:hover{
+    background-color: #b38600;
+}

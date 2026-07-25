@@ -1,0 +1,128 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+
+    background:#1A365D;
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.contenedor{
+
+    background:white;
+
+    width:500px;
+
+    padding:40px;
+
+    text-align:center;
+
+    border-radius:20px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+.icono{
+
+    font-size:70px;
+
+    margin-bottom:20px;
+}
+
+h1{
+
+    color:#1A365D;
+
+    margin-bottom:15px;
+}
+
+p{
+
+    color:#555;
+
+    margin-bottom:10px;
+}
+
+.detalle{
+
+    color:#e74c3c;
+
+    font-weight:bold;
+}
+
+.botones{
+
+    margin-top:30px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+}
+
+.btn-eliminar{
+
+    background:#E53E3E;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 25px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+.btn-eliminar:hover{
+
+    background:#E53E3E;
+
+}
+
+.btn-cancelar{
+
+    background:#1A365D;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 25px;
+
+    border-radius:8px;
+
+    font-weight:bold;
+}
+
+.btn-cancelar:hover{
+
+    background:#1A365D;
+}
+
+@media(max-width:600px){
+
+    .contenedor{
+
+        width:90%;
+    }
+
+    .botones{
+
+        flex-direction:column;
+    }
+
+}
