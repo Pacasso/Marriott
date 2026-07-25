@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const datos = { id_usuario, id_habitacion, fecha_entrada, fecha_salida, costo_total: costoNumerico, estado_reserva };
 
-            fetch('http://localhost:3000/api/reservaciones', {
+            fetch('/api/reservaciones', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(datos)
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Función para listar los hoteles existentes en el select
 function cargarHoteles() {
-    fetch('http://localhost:3000/api/hoteles')
+    fetch('/api/hoteles')
         .then(res => res.json())
         .then(datos => {
             if (datos.success) {
@@ -69,7 +69,7 @@ function cargarHoteles() {
 }
 
 function cargarCatalogos() {
-    fetch('http://localhost:3000/api/usuarios')
+    fetch('/api/usuarios')
         .then(res => res.json())
         .then(datos => {
             if (datos.success) {
@@ -80,7 +80,7 @@ function cargarCatalogos() {
                     selectHuesped.innerHTML += `<option value="${h.id_usuario}">${h.nombre_completo}</option>`;
                 });
             }
-            return fetch('http://localhost:3000/api/habitaciones');
+            return fetch('/api/habitaciones');
         })
         .then(res => res.json())
         .then(datos => {
