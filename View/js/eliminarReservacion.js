@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 1. Mostrar información en la alerta
-    fetch(`http://localhost:3000/api/reservaciones/${idReservacion}`)
+    fetch(`/api/reservaciones/${idReservacion}`)
         .then(res => res.json())
         .then(datos => {
             if (datos.success) {
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (btnConfirmar) {
         btnConfirmar.addEventListener('click', () => {
-            fetch(`http://localhost:3000/api/reservaciones/${idReservacion}`, {
+            fetch(`/api/reservaciones/${idReservacion}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())
