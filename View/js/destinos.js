@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function cargarDestinos(criterio = '') {
-    const url = criterio ? `http://localhost:3000/api/destinos?q=${encodeURIComponent(criterio)}` : 'http://localhost:3000/api/destinos';
+    const url = criterio ? `/api/destinos?q=${encodeURIComponent(criterio)}` : '/api/destinos';
 
     fetch(url)
         .then(respuesta => respuesta.json())
